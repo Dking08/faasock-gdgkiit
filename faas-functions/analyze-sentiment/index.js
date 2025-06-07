@@ -5,8 +5,8 @@ function main(params) {
     return { error: 'Message is required' };
   }
 
-  const posWords = ['happy', 'good', 'great', 'awesome', 'love'];
-  const negWords = ['sad', 'bad', 'terrible', 'hate', 'angry'];
+  const posWords = ['happy', 'good', 'great','reels', 'brainrot', 'awesome', 'yo', 'love'];
+  const negWords = ['sad', 'bad', 'terrible', 'hate','job', 'employeed','gurt', 'angry'];
 
   const msgLower = msg.toLowerCase();
   let pos = 0, neg = 0;

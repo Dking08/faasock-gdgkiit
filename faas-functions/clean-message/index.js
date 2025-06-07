@@ -5,7 +5,7 @@ function main(params) {
     return { error: 'Message is required' };
   }
 
-  const profanityWords = ['idiot', 'stupid', 'dumb', 'hate', 'damn', 'shit'];
+  const profanityWords = ['idiot', 'stupid', 'dumb', 'hate', 'damn','job','gurt','employeed','shower','grass', 'shit'];
   let cleanedMessage = message;
 
   profanityWords.forEach(word => {
