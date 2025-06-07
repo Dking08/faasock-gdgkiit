@@ -212,4 +212,4 @@ Add new serverless functions in the `faas-functions/` directory and deploy using
 > Restriced to KIIT Domain
 ---
 
-Built with ❤️  by Dastageer using Apache OpenWhisk, Kubernetes, and WebSockets for GDGKIIT cloud
+Built with ❤️  by Dastageer using Apache OpenWhisk, Kubernetes, and WebSockets for GFG KIIT cloud
