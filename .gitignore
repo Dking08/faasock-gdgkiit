@@ -1,4 +1,2 @@
-openwhisk/*
-!openwhisk/
-!openwhisk/FAASOCK_read.txt
 **/node_modules/
+openwhisk/*
