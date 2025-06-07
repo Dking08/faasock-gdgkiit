@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: faasock-websocket
+  namespace: faasock
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: faasock-websocket
+  template:
+    metadata:
+      labels:
+        app: faasock-websocket
+    spec:
+      containers:
+      - name: websocket-server
+        image: faasock/websocket-server:latest
+        ports:
+        - containerPort: 8080
+        - containerPort: 3000
+        env:
+        - name: OPENWHISK_HOST
+          value: "openwhisk-controller.openwhisk:8080"
+        - name: OPENWHISK_AUTH
+          valueFrom:
+            secretKeyRef:
+              name: openwhisk-auth
+              key: auth
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 3000
+          initialDelaySeconds: 5
+          periodSeconds: 5

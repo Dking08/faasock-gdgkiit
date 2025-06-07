@@ -3,7 +3,7 @@ const axios = require('axios');
 const { v4: uuidv4 } = require('uuid');
 
 // OpenWhisk configuration
-const OPENWHISK_HOST = process.env.OPENWHISK_HOST || 'localhost:3233';
+const OPENWHISK_HOST = process.env.OPENWHISK_HOST || '172.17.0.1:3233';
 const OPENWHISK_AUTH = process.env.OPENWHISK_AUTH || '23bc46b1-71f6-4ed5-8c54-816aa4f8c502:123zO3xZCLrMN6v2BKK1dXYFpXlPkccOFqm12CdAsMgRU4VrNZ9lyGVCGuMDGIwP';
 
 const wss = new WebSocket.Server({ port: 8080 });
