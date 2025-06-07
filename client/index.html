@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhiskChat - Real-time Moderated Chat</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1> WhiskChat</h1>
+            <p>Real-time chat with AI moderation & sentiment analysis</p>
+            <div class="status" id="status">Connecting...</div>
+        </header>
+
+        <div class="chat-container">
+            <div class="messages" id="messages"></div>
+
+            <div class="input-container">
+                <input 
+                    type="text" 
+                    id="usernameInput" 
+                    placeholder="Your name..." 
+                    maxlength="20"
+                >
+                <input 
+                    type="text" 
+                    id="messageInput" 
+                    placeholder="Type your message..." 
+                    maxlength="500"
+                    disabled
+                >
+                <button id="sendButton" disabled>Send</button>
+            </div>
+        </div>
+
+        <div class="info">
+            <p> Messages are auto-moderated •  Sentiment analysis powered by OpenWhisk FaaS</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
