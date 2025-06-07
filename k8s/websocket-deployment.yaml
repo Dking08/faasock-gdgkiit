@@ -15,13 +15,13 @@ spec:
     spec:
       containers:
       - name: websocket-server
-        image: faasock/websocket-server:latest
+        image: localhost:5000/faasock/websocket-server:latest 
         ports:
         - containerPort: 8080
         - containerPort: 3000
         env:
         - name: OPENWHISK_HOST
-          value: "openwhisk-controller.openwhisk:8080"
+          value: "172.17.0.1:3233"
         - name: OPENWHISK_AUTH
           valueFrom:
             secretKeyRef:
